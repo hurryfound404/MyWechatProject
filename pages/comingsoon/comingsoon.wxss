@@ -1,0 +1,45 @@
+/* pages/comingsoon/comingsoon.wxss */
+.everyMovie{
+  padding-top: 40rpx;
+  height: 300rpx;
+  width: 99%;
+  margin-top: 30rpx;
+}
+.MovieContent{
+ display: flex;
+ margin: 0 auto;
+ width: 90%;
+ height: 250rpx;
+}
+.leftImgBox{
+  justify-content: flex-start;
+  width: 30%;
+  /* border: 1px solid #00C777; */
+  height: 250rpx;
+}
+.rightText{
+  justify-content: flex-end;
+  width: 65%;
+  /* border: 1px solid #00C777; */
+  height: 250rpx;
+  margin-left: 20rpx;
+}
+ .everyMovie .leftImgBox .movieImg{
+   width: 100%;
+   height: 249rpx; 
+} 
+.textTile{
+  font-size: 10pt;
+}
+.textDetil{
+  margin-top: 6rpx;
+  font-size: 8pt;
+   color: red;
+}
+.howColor{
+  color:#00C777; 
+}
+.textHow{
+  margin-top: 60rpx;
+  font-size: 12pt;
+}

@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/test/Wtest",
+    "pages/movieDetile/movieDe",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/comingsoon/comingsoon"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F2F2F2",
+    "navigationBarTitleText": "豆瓣看电影",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/comingsoon/comingsoon",
+        "iconPath": "images/new.png",
+        "selectedIconPath": "images/new.png",
+        "text": "即将上映"
+      },
+      {
+        "pagePath": "pages/test/Wtest",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home.png",
+        "text": "豆瓣首页"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "images/like.png",
+        "selectedIconPath": "images/like.png",
+        "text": "正在热映"
+      }
+    ]
+  }
+}

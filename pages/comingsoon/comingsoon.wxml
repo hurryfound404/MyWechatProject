@@ -1,0 +1,21 @@
+<!--pages/comingsoon/comingsoon.wxml-->
+<!-- <text>pages/comingsoon/comingsoon.wxml</text> -->
+<view>
+<loading hidden="{{!loading}}">加载中.....</loading> 
+      <!-- 每一张电影 -->
+      <block wx:for="{{movieTop}}" wx:key="unique">
+      <view class='everyMovie' id="{{item.id}}"  bindtap='movieDetile'>
+        <view class='MovieContent'>
+        <!-- 图片 -->
+           <view class='leftImgBox'>
+               <image class='movieImg' src='{{item.images.large}}'></image>
+           </view>
+           <view class='rightText'>
+             <view class='textTile'>{{item.title}}</view>
+             <view class='textDetil'>{{item.genres[0]}},{{item.genres[1]}}</view>
+             <view class='textHow'>豆瓣评分：<text class='howColor'>{{item.rating.average}}</text></view>  
+           </view>
+        </view>
+      </view>
+      </block>
+    </view>

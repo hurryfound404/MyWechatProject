@@ -1,0 +1,85 @@
+<!--pages/test/Wtest.wxml-->
+<view>
+<loading hidden="{{!loading}}">加载中.....</loading> 
+  <!-- 轮播部分 -->
+  <view class='banner'>
+    <view>
+      <swiper class='swContent' autoplay="true" indicator-dots="true" duration="1500" interval="2500" circular="true">
+        <!-- 这里不写key会有一个警告所以还是用一个key来标识一下循环的每一项，如果列表中项目的位置会动态改变或者有新的项目添加到列表中，并且希望列表中的项目保持自己的特征和状态（如 <input/> 中的输入内容，<switch/> 的选中状态），需要使用 wx:key 来指定列表中项目的唯一的标识符。 -->
+        <block wx:for="{{movieList}}" wx:key="movieList">
+          <swiper-item id="{{item.id}}"  bindtap='movieDetile'>
+            <image src='{{item.images.large}}' class='swImg'></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view>
+    <!-- 导航部分 -->
+    <view class='navContent'>
+      <text wx:for="{{navbar}}" data-idx="{{index}}" class="NavItem {{currentTab==index ? 'Nav-active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+    </view>
+
+
+
+    <!--豆瓣热映-->
+    <view hidden="{{currentTab!==0}}">
+      <!-- 每一张电影 -->
+      <block wx:for="{{movieTop}}" wx:key="unique">
+      <view class='everyMovie' id="{{item.id}}"  bindtap='movieDetile'>
+        <view class='MovieContent'>
+        <!-- 图片 -->
+           <view class='leftImgBox'>
+               <image class='movieImg' src='{{item.images.large}}'></image>
+           </view>
+           <view class='rightText'>
+             <view class='textTile'>{{item.title}}</view>
+             <view class='textDetil'>{{item.genres[0]}},{{item.genres[1]}}</view>
+             <view class='textHow'>豆瓣评分：<text class='howColor'>{{item.rating.average}}</text></view>  
+           </view>
+        </view>
+      </view>
+      </block>
+
+    </view>
+    <!--热门电影-->
+    <view hidden="{{currentTab!==1}}">
+      <!-- 每一张电影 -->
+      <block wx:for="{{movieTop}}" wx:key="unique">
+      <view class='everyMovie' id="{{item.id}}"  bindtap='movieDetile'>
+        <view class='MovieContent'>
+        <!-- 图片 -->
+           <view class='leftImgBox'>
+               <image class='movieImg' src='{{item.images.large}}'></image>
+           </view>
+           <view class='rightText'>
+             <view class='textTile'>{{item.title}}</view>
+             <view class='textDetil'>{{item.genres[0]}},{{item.genres[1]}}</view>
+             <view class='textHow'>豆瓣评分：<text class='howColor'>{{item.rating.average}}</text></view>  
+           </view>
+        </view>
+      </view>
+      </block>
+    </view>
+
+    <!--电影详情-->
+    <view hidden="{{currentTab!==2}}">
+      <!-- 每一张电影 -->
+      <block wx:for="{{movieTop}}" wx:key="unique">
+      <view class='everyMovie' id="{{item.id}}"  bindtap='movieDetile'>
+        <view class='MovieContent'>
+        <!-- 图片 -->
+           <view class='leftImgBox'>
+               <image class='movieImg' src='{{item.images.large}}'></image>
+           </view>
+           <view class='rightText'>
+             <view class='textTile'>{{item.title}}</view>
+             <view class='textDetil'>{{item.genres[0]}},{{item.genres[1]}}</view>
+             <view class='textHow'>豆瓣评分：<text class='howColor'>{{item.rating.average}}</text></view>  
+           </view>
+        </view>
+      </view>
+      </block>
+    </view>
+  </view>
+</view>

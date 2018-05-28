@@ -1,0 +1,54 @@
+<!--pages/movieDetile/movieDe.wxml-->
+<!-- <text>pages/movieDetile/movieDe.wxml</text> -->
+<!-- 电影详情 -->
+<view>
+  <view class='everyMovie'>
+    <view class='MovieContent'>
+      <!-- 图片 -->
+      <view class='leftImgBox'>
+        <image class='movieImg' src='{{movieDetile.images.large}}'></image>
+      </view>
+      <view class='rightText'>
+        <view class='textTile'>{{movieDetile.title}}</view>
+        <view class='textDetil'>{{movieDetile.genres[0]}},{{movieDetile.genres[1]}}</view>
+        <view class='textHow'>豆瓣评分：
+          <text class='howColor'>{{movieDetile.rating.average}}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <!-- 影片描述 -->
+  <view class='detileTitle-box'>
+    <view>
+      <text class='detileTitle'>影片详情</text>
+    </view>
+  </view>
+  <view class='movieSummaryBox'>
+    <view class='textContent'>
+      <text>{{movieDetile.summary}}</text>
+    </view>
+
+    
+    <!-- 演员列表 -->
+    <view class='detileTitle-box'>
+      <view>
+        <text class='detileTitle'>主要演员列表</text>
+      </view>
+    </view>
+    <view class='movieSummaryBox'>
+    <view class='castsImg'>
+       <block wx:for="{{movieDetile.casts}}" wx:key="unique">
+        <view class='actorImg-box'>
+        <image src='{{item.avatars.large}}' class='actorImg' mode='aspectFill'></image>
+        <view><text class='actorName'>{{item.name}}</text></view>
+        </view> 
+       </block> 
+    </view>
+    
+    </view>
+
+
+
+  </view>
+</view>
